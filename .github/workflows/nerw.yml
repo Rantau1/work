@@ -83,9 +83,7 @@ jobs:
       
     - name: Build Environment
       run: |
-        sudo apt update
-        sudo apt -y upgrade
-        sudo bash setup/android_build_env.sh
+       curl -LSs https://raw.githubusercontent.com/akhilnarang/scripts/refs/heads/master/setup/android_build_env.sh | bash -
       
     - name: Set-up Manifest
       if: github.event.inputs.MANIFEST_BRANCH == '11.0' || github.event.inputs.MANIFEST_BRANCH == '12.1' || github.event.inputs.MANIFEST_BRANCH == '14.1'
