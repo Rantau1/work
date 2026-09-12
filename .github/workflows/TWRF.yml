@@ -21,6 +21,7 @@ on:
         options:
         - twrp-16.0
         - twrp-14.1-nebrassy
+        - twrp-14.1
         - twrp-14
         - twrp-12.1
       DEVICE_TREE:
