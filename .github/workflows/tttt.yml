@@ -93,9 +93,16 @@ jobs:
        curl -LSs https://raw.githubusercontent.com/akhilnarang/scripts/refs/heads/master/setup/android_build_env.sh | bash -
       
     - name: Set-up Manifest
+      id: manifest
       if: github.event.inputs.MANIFEST_BRANCH == '11.0' || github.event.inputs.MANIFEST_BRANCH == '12.1' || github.event.inputs.MANIFEST_BRANCH == 'twrp-14.1'
       run: |
+        if_true: ${{ github.event.inputs.MANIFEST_URL }}
+        if_false: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+
+    - name: Initialize Repo
+      run: | 
         mkdir workspace
+        cd workspace
         git config --global user.name "Samuel Kendall"
         git config --global user.email "kinguser981@gmail.com"
         git clone ${{ github.event.inputs.MANIFEST_URL }}
