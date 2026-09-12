@@ -3,8 +3,8 @@ name: TWRP 14.1 - Build
 on:
   workflow_dispatch:
     inputs:
-      SYNC_URL: 
-        description: 'SYNC_URL' 
+      MANIFEST_URL: 
+        description: 'MANIFEST_URL' 
         required: true 
         default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp' 
         type: choice
@@ -98,7 +98,7 @@ jobs:
         mkdir workspace
         git config --global user.name "Samuel Kendall"
         git config --global user.email "kinguser981@gmail.com"
-        git clone ${{ github.event.inputs.SYNC_URL }}
+        git clone ${{ github.event.inputs.MANIFEST_URL }}
         repo init --depth=1 -u ${{ steps.manifest.outputs.value }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
 
     - name: Repo Sync
