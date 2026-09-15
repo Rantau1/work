@@ -11,7 +11,7 @@ on:
         - https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
         - https://github.com/nebrassy/platform_manifest_twrp_aosp.git
         - https://github.com/Kendrenogen/platform_manifest_twrp_aosp_nebrassy.git
-        - https://github.com/TWRP-Test/platform_manifest_twrp_aosp.git
+        - https://github.com/Rantau1/tw.git
         - https://github.com/linastorvaldz/platform_manifest_twrp_aosp.git
       MANIFEST_BRANCH:
         description: 'TWRP Minimal-Manifest Branch'
